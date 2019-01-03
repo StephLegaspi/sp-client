@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import "./index.css";
 import {Button, Icon, Row, Col, CardPanel, Input, Navbar, NavItem} from 'react-materialize';
 
 
@@ -73,41 +74,85 @@ export default class SignUp extends Component {
 	render(){
 		return(
 			<div>
-				<nav class="nav-extended">
+				<nav class="nav-extended" style={bg_color}>
 					<div class="nav-wrapper">
-					    <a href="#" class="brand-logo">Logo</a>
-					    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-					    <ul id="nav-mobile" class="right hide-on-med-and-down">
-					        <li><a href="sass.html">Sass</a></li>
-					        <li><a href="badges.html">Components</a></li>
-					        <li><a href="collapsible.html">JavaScript</a></li>
-					    </ul>
+					    <a style={nav_font_style} href="#" class="brand-logo"><h1>Logo</h1></a>
+					    <div class="nav-wrapper">
+					    
+						    <ul  id="nav-mobile" class="right hide-on-med-and-down" >
+						        <li><a style={nav_font_style} class="active class" href="sass.html">Portfolio</a></li>
+						        <li><a style={nav_font_style} href="badges.html">Contact Us</a></li>
+						        <li><a style={nav_font_style} href="collapsible.html">Sign Up</a></li>
+						        <li><a style={nav_font_style} href="collapsible.html">Login</a></li>
+						    </ul>
+						</div>
 					</div>
-					<div class="nav-content">
+					<div class="nav-content" style={nav2_margin}>
 					    <ul class="tabs tabs-transparent">
-					        <li class="tab"><a href="#test1">Test 1</a></li>
-					        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-					        <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
-					        <li class="tab"><a href="#test4">Test 4</a></li>
+					        <li class="tab"><a style={nav_font_style}  href="#test1">Home</a></li>
+					        <li class="tab"><a style={nav_font_style}  href="#test2">Shop</a></li>
+					        <li class="tab"><a style={nav_font_style} href="#test3">Catering Package</a></li>
+					        <li class="tab"><a style={nav_font_style} href="#test4">Menu</a></li>
+					        <li class="tab"><a style={nav_font_style} href="#test4">Motif</a></li>
+					        <li class="tab"><a style={nav_font_style} href="#test4">Request Package</a></li>
 					    </ul>
 					</div>
+					
 				</nav>
 
-				<ul class="sidenav" id="mobile-demo">
-					<li>Sass</li>
-					<li>Components</li>
-					<li>JavaScript</li>
-				</ul>
+				<Row style={style}>
+					<CardPanel classshipper_name="white black-text">
+					    <Row>
+	
+						    <Input  s={4} label="First name" onChange={this.handleshipper_nameChanged}/>
+						    <Input type="email" label="Middle Name" s={4} onChange={this.handleEmailChanged}/>
+						    <Input s={4} label="Last Name" onChange={this.handleContactChanged}/>
+						    <Input label="Email Address" s={6} onChange={this.handleCompanyChanged}/>
+						    <Input label="Password" s={6} onChange={this.handleAddressChanged}/>
+						    <Input label="Address" s={12} onChange={this.handleQuantityChanged}/>
+						    <Input label="Zip Code" s={6} onChange={this.handleDescChanged}/>
+						    <Input label="Contact Number" s={6} onChange={this.handleAccountChanged}/>
+						</Row>
+					</CardPanel>
 
-				<div id="test1" class="col s12">Test 1</div>
-				<div id="test2" class="col s12">Test 2</div>
-				<div id="test3" class="col s12">Test 3</div>
-				<div id="test4" class="col s12">Test 4</div>
+					<Button waves='light' onClick={this.handleSubmit} method="POST">
+						Sign Up
+					</Button>	
+				</Row>
 
+				<footer class="page-footer" style={bg_color}>
+		          <div class="container">
+		            <div class="row">
+		              <div class="col l6 s12">
+		                <h5 class="white-text">Footer Content</h5>
+		                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+		              </div>
+		              <div class="col l4 offset-l2 s12">
+		                <h5 class="white-text">Links</h5>
+		                <ul>
+		                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+		                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+		                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+		                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+		                </ul>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="footer-copyright" style={bg_color2}>
+		            <div style={footer2} class="container">
+		            	© 2019 Leira Jane's Party Needs and Catering Services
+		            </div>
+		  
+		          </div>
+		        </footer>
 			</div>
+
+
 		);
 	}
 }
+
+
 
 const style = {
 	height: 570,
@@ -117,5 +162,29 @@ const style = {
 	marginRight: '5%',
 	textAlign: 'center',
 	
+};
+
+const nav2_margin = {
+	marginLeft: '17%'
+};
+
+const bg_color = {
+	backgroundColor: '#191167'
+};
+
+const bg_color2 = {
+	backgroundColor: '#f89d28'
+};
+
+const nav_font_style = {
+	color: 'white',
+	fontSize: '18px'
+};
+
+const footer2 = {
+	color: 'white',
+	fontSize: '12px',
+	fontWeight: 'bold',
+	textAlign: 'center'
 };
 

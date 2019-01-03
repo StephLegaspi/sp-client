@@ -1,0 +1,12 @@
+.page {
+	color: black;
+}
+
+#nav-mobile a:active {
+    background-color:red;
+    color:black;
+} /*Text color on hover*/
+
+.navwrap {
+	height: 40px;
+}
