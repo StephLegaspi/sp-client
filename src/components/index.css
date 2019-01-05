@@ -1,12 +1,9 @@
-.page {
-	color: black;
-}
-
-#nav-mobile a:active {
-    background-color:red;
-    color:black;
-} /*Text color on hover*/
-
-.navwrap {
-	height: 40px;
-}
+.style {
+	height: 570;
+	width: '90%';
+	margin-top: '50px';
+	margin-left: '5%';
+	margin-right: '5%';
+	text-align: 'center';
+	
+};
