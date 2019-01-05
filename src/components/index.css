@@ -2,11 +2,14 @@
 	color: black;
 }
 
-#nav-mobile a:active {
-    background-color:red;
-    color:black;
-} /*Text color on hover*/
+
 
 .navwrap {
 	height: 40px;
 }
+
+.dropdown-button  {
+    background-color: #388e3c  !important;
+    font-size: 13px;
+
+  }  

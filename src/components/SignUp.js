@@ -8,117 +8,30 @@ export default class SignUp extends Component {
 
 	constructor() {
 		super();
-
-		this.state = {
-			shipper_name: "",
-			contact_number: "",
-			email: "",
-			company_name: "",
-			pickup_address: "",
-			account_number: "",
-
-			quantity: 0,
-			description: "",
-			size: ""
-		}
-
-		this.handleshipper_nameChanged = this.handleshipper_nameChanged.bind(this);
-		this.handleContactChanged = this.handleContactChanged.bind(this);
-		this.handleEmailChanged = this.handleEmailChanged.bind(this);
-		this.handleCompanyChanged = this.handleCompanyChanged.bind(this);
-		this.handleAddressChanged = this.handleAddressChanged.bind(this);
-		this.handleAccountChanged = this.handleAccountChanged.bind(this);
-
-		this.handleQuantityChanged = this.handleQuantityChanged.bind(this);
-		this.handleDescChanged = this.handleDescChanged.bind(this);
-		this.handleSizeChanged = this.handleSizeChanged.bind(this);
-
-		 this.handleSubmit = this.handleSubmit.bind(this)
-
 	}
-
-	handleshipper_nameChanged(e) { this.setState({shipper_name: e.target.value}); }
-	handleContactChanged(e) { this.setState({contact_number: e.target.value}); }
-	handleEmailChanged(e) { this.setState({email: e.target.value}); }
-	handleCompanyChanged(e) { this.setState({company_name: e.target.value}); }
-	handleAddressChanged(e) { this.setState({pickup_address: e.target.value}); }
-	handleAccountChanged(e) { this.setState({account_number: e.target.value}); }
-
-	handleQuantityChanged(e) { this.setState({quantity: e.target.value}); }
-	handleDescChanged(e) { this.setState({description: e.target.value}); }
-	handleSizeChanged(e) { this.setState({size: e.target.value}); }
-
-	handleSubmit(event) {
-		console.log(this.state.shipper_name);
-        event.preventDefault()
-       
-        fetch(`http://localhost:3001/booking/add-booking`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(this.state)
-
-        }).then(function(response) {
-            if (response.status >= 400) {
-              throw new Error("Bad response from server");
-            }
-            return response.json();
-        }).then(function(data) {
-            console.log("Success");    
-        }).catch(function(err) {
-            console.log(err)
-        });
-    }
 
 
 
 	render(){
 		return(
 			<div>
-				<nav class="nav-extended" style={bg_color}>
-					<div class="nav-wrapper">
-					    <a style={nav_font_style} href="#" class="brand-logo"><h1>Logo</h1></a>
+					<ul id="dropdown1" class="dropdown-content">
+					  <li><a href="https://www.jquery-az.com/6-examples-materialize-modals-live-demos-code/">one</a></li>
+					  <li><a href="#">two</a></li>
+					  <li class="divider"></li>
+					  <li><a href="#">three</a></li>
+					</ul>
+					<nav>
 					    <div class="nav-wrapper">
-					    
-						    <ul  id="nav-mobile" class="right hide-on-med-and-down" >
-						        <li><a style={nav_font_style} class="active class" href="sass.html">Portfolio</a></li>
-						        <li><a style={nav_font_style} href="badges.html">Contact Us</a></li>
-						        <li><a style={nav_font_style} href="collapsible.html">Sign Up</a></li>
-						        <li><a style={nav_font_style} href="collapsible.html">Login</a></li>
-						    </ul>
-						</div>
-					</div>
-					<div class="nav-content" style={nav2_margin}>
-					    <ul class="tabs tabs-transparent">
-					        <li class="tab"><a style={nav_font_style}  href="#test1">Home</a></li>
-					        <li class="tab"><a style={nav_font_style}  href="#test2">Shop</a></li>
-					        <li class="tab"><a style={nav_font_style} href="#test3">Catering Package</a></li>
-					        <li class="tab"><a style={nav_font_style} href="#test4">Menu</a></li>
-					        <li class="tab"><a style={nav_font_style} href="#test4">Motif</a></li>
-					        <li class="tab"><a style={nav_font_style} href="#test4">Request Package</a></li>
-					    </ul>
-					</div>
-					
-				</nav>
+					      <a href="#" class="brand-logo">Logo</a>
+					      <ul id="nav-mobile" class="right hide-on-med-and-down">
+					        
+					        <li><a class="dropdown-trigger" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+					      </ul>
+					    </div>
+					</nav>
 
-				<Row style={style}>
-					<CardPanel classshipper_name="white black-text">
-					    <Row>
-	
-						    <Input  s={4} label="First name" onChange={this.handleshipper_nameChanged}/>
-						    <Input type="email" label="Middle Name" s={4} onChange={this.handleEmailChanged}/>
-						    <Input s={4} label="Last Name" onChange={this.handleContactChanged}/>
-						    <Input label="Email Address" s={6} onChange={this.handleCompanyChanged}/>
-						    <Input label="Password" s={6} onChange={this.handleAddressChanged}/>
-						    <Input label="Address" s={12} onChange={this.handleQuantityChanged}/>
-						    <Input label="Zip Code" s={6} onChange={this.handleDescChanged}/>
-						    <Input label="Contact Number" s={6} onChange={this.handleAccountChanged}/>
-						</Row>
-					</CardPanel>
 
-					<Button waves='light' onClick={this.handleSubmit} method="POST">
-						Sign Up
-					</Button>	
-				</Row>
 
 				<footer class="page-footer" style={bg_color}>
 		          <div class="container">
